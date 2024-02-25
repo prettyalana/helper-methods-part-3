@@ -51,18 +51,21 @@
         </div>
       </div>
     </nav>
-    <%if notice.present?%>
-      <div class="alert alert-success" role="alert">
-        <%= notice %>
-      </div>
-    <% end %>
+    <div class="container mt-3">
+    <!-- mt stands for margin top -->
+      <%if notice.present?%>
+        <div class="alert alert-success" role="alert">
+          <%= notice %>
+        </div>
+      <% end %>
 
-    <%if alert.present?%>
-      <div class="alert alert-danger" role="alert">
-        <%= alert %>
-      </div>
-    <% end %>
+      <%if alert.present?%>
+        <div class="alert alert-danger" role="alert">
+          <%= alert %>
+        </div>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
 </html>
