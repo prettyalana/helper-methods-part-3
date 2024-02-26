@@ -2,6 +2,8 @@
   List of all movies
 </h1>
 
+<%#= render partial: "zebra/elephant", locals: {person: "Alice"}%>
+
 <hr>
 
 <div>
@@ -10,56 +12,14 @@
 
 <hr>
 
-<table>
-  <tr>
-    <th>
-      ID
-    </th>
+<div class="row">
 
-    <th>
-      Title
-    </th>
+<%= render @movies%>
 
-    <th>
-      Description
-    </th>
+  <%# @movies.each do |movie| %>
+<!--    <div class="col-md-3">-->
+      <%#= render partial: "movies/movie_card", locals: {movie: movie}%>
+<!--    </div>-->
+  <%# end %>
 
-    <th>
-      Created at
-    </th>
-
-    <th>
-      Updated at
-    </th>
-
-    <th>
-    </th>
-  </tr>
-
-  <% @movies.each do |movie| %>
-  <tr>
-    <td>
-      <%= movie.id %>
-    </td>
-
-    <td>
-      <%= movie.title %>
-    </td>
-
-    <td>
-      <%= movie.description %>
-    </td>
-
-    <td>
-      <%= time_ago_in_words(movie.created_at) %> ago
-    </td>
-    <td>
-      <%= time_ago_in_words(movie.updated_at) %> ago
-    </td>
-
-    <td>
-      <%= link_to "Show details", movie %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+</div>
